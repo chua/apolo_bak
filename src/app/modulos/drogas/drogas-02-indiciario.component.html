@@ -1,0 +1,33 @@
+<div class="print-header">
+    <span>Expediente: {{exp_numero ? exp_numero : ' ______________'}}</span>
+    <img class="logo" src="../../assets/imgs/logo_ayto.png"/>
+</div>
+
+ <div class="print-body">
+    <p class="titulo">ACTA DE OBTENCION DE MUESTRAS SALIVALES E INVESTIGACION DE LA PRESENCIA CUALITATIVA DE DROGAS EN EL ORGANISMO MEDIANTE TEST INDICIARIO.</p>
+    <p>En <span [ngClass]="resalteClass">{{prb_lugar}}</span> de <span [ngClass]="resalteClass">{{cfg_Ciudad}}</span>, a las <span [ngClass]="resalteClass">{{prb_hora}}</span> horas del <span [ngClass]="resalteClass">{{prb_fecha|date:'dd/MM/yyyy'}}</span>, el funcionario con NIP <span [ngClass]="resalteClass">{{exp_instructor}}</span>, en funciones de policía judicial de tráfico habilitado al efecto de acuerdo con el art. 796.1.7o de la Lecrim, <b>CERTIFICA</b> la práctica de la prueba de detección de drogas en fluido oral a la persona cuyos datos de filiación aparecen a continuación, la cual ha sido informada previamente de sus derechos, así como de sus obligaciones y de las consecuencias de la negativa a realizar la misma.</p>
+
+
+
+
+
+
+
+    <p>
+        Si el resultado del análisis de la segunda muestra de saliva por el laboratorio homologado fuera positivo, la Administración competente podrá
+        iniciar el correspondiente expediente sancionador administrativo. Asimismo, si procede conforme a los supuestos del artículo 379 del Código
+        Penal, que establece como delito la conducción de vehículos a motor y ciclomotores bajo la influencia de drogas tóxicas, estupefacientes y
+        sustancias psicotrópicas, se pondrá en conocimiento de la autoridad judicial correspondiente a los efectos oportunos.
+        Tras ser informado de la normativa y derechos aplicables a las pruebas de detección de drogas, el implicado manifiesta:
+        Su conformidad a realizar las pruebas. Su negativa a realizar las pruebas.
+    </p>
+    <p>
+        El presente acta quedará integrado, en su caso, anexo al boletín de denuncia y al Atestado. CONSTE Y CERTIFICO.
+        NIP: NIP: DNI/NIE/PAS.
+        Firma agente instructor: Firma agente testigo: Firma del interesado:
+    </p>
+</div>
+
+<div class="print-footer">
+    {{textoPie}}
+</div>

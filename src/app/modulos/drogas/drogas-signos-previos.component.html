@@ -1,0 +1,159 @@
+<div class="print-header">
+    <span>Expediente: {{exp_numero ? exp_numero : ' ______________'}}</span>
+    <img class="logo" src="../../assets/imgs/logo_ayto.png"/>
+</div>
+
+<div class="print-body">
+          <p>
+                En la ciudad de Elche, siendo las ________ horas del día ____________, el agente con NIP_______, en funciones de policía judicial de tráfico con la formación específica requerida por el artículo 796.1.7o de la Ley de Enjuiciamiento Criminal,
+                <b>CERTIFICA</b> que la persona cuya filiación aparece a continuación, siendo requerida para someterse a las pruebas de detección, de presencia de drogas en el organismo, <b>presenta los siguientes signos</b>:
+                </p>
+
+                <table>
+                  <tr>
+                    <td>Nombre y Apellidos</td>
+                  </tr>
+                </table>
+
+                <table>
+                  <tr>
+                    <th>A. Observaciones generales a realizar mientras se solicita documentación, se inspecciona el vehículo, etc:</th>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      1) Actitud y comportamiento:
+                        <ngl-form-checkbox label="Nervioso"><input nglFormControl type="checkbox" [(ngModel)]="SG_1_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Inadecuado, contento, eufórico"><input nglFormControl type="checkbox" [(ngModel)]="SG_1_b" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Provocativo"><input nglFormControl type="checkbox" [(ngModel)]="SG_1_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Lloroso"><input nglFormControl type="checkbox" [(ngModel)]="SG_1_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Adormilado"><input nglFormControl type="checkbox" [(ngModel)]="SG_1_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Se rasca la cara continuamente"><input nglFormControl type="checkbox" [(ngModel)]="SG_1_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="No comprende instrucciones"><input nglFormControl type="checkbox" [(ngModel)]="SG_1_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Otras alteraciones, señalar:"><input nglFormControl type="checkbox" [(ngModel)]="SG_1_a" /></ngl-form-checkbox>      
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      2) Aspecto corporal general:
+                  <ngl-form-checkbox label="Temblor"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Sudoración inapropiada"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_b" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Inquietud"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_c" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Respiración superficial"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_d" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Otras alteraciones, señalar:"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_e" /></ngl-form-checkbox>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      3) Aspecto de la cara:
+                  <ngl-form-checkbox label="Parpadeo Constante"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Nariz roja"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Esnifa constantemente"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Traga saliva"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Olor a porro"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Otras alteraciones, señalar:"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      4) Habla / lenguaje
+                      <ngl-form-checkbox label="Locuacidad, hilaridad, no para de hablar"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                      <ngl-form-checkbox label="Habla dificultosa, lenta, mal articulada"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                      <ngl-form-checkbox label="Voz de tono bajo y rasposo"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                      <ngl-form-checkbox label="Otras reacciones, señalar"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      5) Coordinación
+                      <ngl-form-checkbox label="Tambaleante, sin equilibrio"><input nglFormControl type="checkbox" [(ngModel)]="SG_5_a" /></ngl-form-checkbox>
+                      <ngl-form-checkbox label="Movimientos descoordinados"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                      <ngl-form-checkbox label="Temblor generalizado"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                      <ngl-form-checkbox label="Temblores de piernas"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                      <ngl-form-checkbox label="Otras alteraciones, señalar"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                    </td>
+                  </tr>
+
+                </table>
+
+
+                <table>
+                  <tr>
+                    <th>B. Signos específicos:</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      6) Aspecto de la conjuntiva:
+                        <ngl-form-checkbox label="Conjuntiva enrojecida o con edema"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      7) Movimientos oculares de seguimiento:<br/>
+                  ¿Existe brusquedad y/o espasmo?<br/>
+                  <ngl-form-checkbox label="Si, en uno o ambos ojos"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      8) Valoración del Nistagmo horizontal:<br/>
+                  8.1 ¿Aparición de nistagmo seguimiento horizontal?<br/>
+                  <ngl-form-checkbox label="Si, en uno o ambos ojos"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox><br/>
+                  8.2 ¿Aparición de nistagmo en ángulo máx.?<br/>
+                  <ngl-form-checkbox label="Si, en uno o ambos ojos"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox><br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      9) Diámetro pupilar:<br/>
+                  <ngl-form-checkbox label="Contracción en ambos ojos (= 2 mm)"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                  <ngl-form-checkbox label="Dilatación en ambos ojos (= 6,5 mm)"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                  imágen
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      10) Reacción de la pupila a la luz:<br/>
+                  <ngl-form-checkbox label="Enlentecida o apenas perceptible"><input nglFormControl type="checkbox" [(ngModel)]="SG_2_a" /></ngl-form-checkbox>
+                    </td>
+                  </tr>
+                </table>
+
+                <table>
+                  <tr>
+                    <th>Otras observaciones:</th>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                </table>
+
+                <p>
+                Criterios Vía penal consensuados con Fiscalía:
+
+                Signos generales + Signo específico 7
+
+                Signos generales + Signo específico 8 (al menos uno)
+
+                Signos generales + Signo específico 10
+
+                Signos generales + Signo específico 6 + 9
+
+                Signos generales + Signo específico 6 + alguno de 7, 8 ó 10
+
+                Signos generales + Signo específico 9 + alguno de 7, 8 ó 10
+                </p>
+
+                <p>
+                Y para que conste se extiende la presente en el lugar, fecha y hora arriba consignados, siendo firmada por el agente actuante.
+
+                __Firma del agente__
+                </p>
+    </div>
+<div class="print-footer">
+    {{textoPie}}
+</div>

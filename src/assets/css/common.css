@@ -1,0 +1,27 @@
+    .encabezado {
+      display: block;
+      height: 50px;border: 1px solid black;
+    }
+
+
+    .folio .encabezado .logo {
+      height: 49px;
+      float: right;
+    }
+
+    .folio .cuerpo p {
+        text-indent: 1.5em;
+        text-align: justify;
+        margin-bottom: 1em;
+    }
+
+    folio > .cuerpo > table {
+      width: 100%;
+    }
+
+    .folio > .cuerpo > table > tr > td {
+        text-align: center; /*?*/
+    }
+
+
+

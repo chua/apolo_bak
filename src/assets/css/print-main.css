@@ -1,0 +1,41 @@
+
+@media print {
+
+    #top-menu  {display: none !important}
+    #main-menu {display: none !important}   
+
+    header, footer, nav, aside { display: none; }
+    body { background-image: none; }
+
+
+    .content-header {
+        display: none;
+    }
+
+    .content-box {
+        display: none;
+    }
+
+    .print-box {
+        display: block;
+    }
+
+
+
+
+    /*Hoja de impresión */
+
+    .folio {
+
+        background: #fff;
+        margin: 10px auto;
+       /* padding-top: 2,5cm;*/
+    }
+
+
+
+
+
+}
+
+

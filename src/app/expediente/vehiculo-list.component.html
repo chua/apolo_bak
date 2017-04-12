@@ -1,0 +1,41 @@
+<div class="content-header">
+  <h1>Gestión de Vehículos </h1>
+</div>
+
+<div class="content-box">
+  <div class="section">
+
+    <div>    
+      <h3>Selecciona un vehículo:</h3>
+    </div>
+
+    <table class="table table-striped table-hover table-responsive">
+      <thead>
+        <tr>
+          <th>Matrícula</th>
+          <th>Bastidor</th>
+          <th>Marca y Modelo</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos" (click)="select(vehiculo)">
+          <td>{{vehiculo.matricula}}</td>
+          <td>{{vehiculo.bastidor}}</td>
+          <td>{{vehiculo.marca_modelo}}</td>
+          <td><button type="button" class="close" aria-label="Close" (click)="remove(vehiculo)">
+                <span aria-hidden="true">&times;</span>
+              </button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+<button type="button" class="btn btn-primary" (click)="add()">Añadir vehículo</button>
+
+  </div>
+</div>
+
+

@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'assets/css/common.css';
+
+@media screen {
+    @import 'assets/css/screen-main.css';
+}
+
+@media print {
+    @import 'assets/css/print-main.css';
+}
+
+
+

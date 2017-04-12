@@ -1,0 +1,48 @@
+
+
+<div class="content-header">
+  <h1>Edición de vehículo </h1>
+</div>
+
+<div class="content-box">
+  <div class="section">
+      
+
+
+
+
+<form novalidate>
+
+    <div class="form-group"> <!--has-success-->
+        <label for="frm_matricula">Matrícula</label>
+        <input [(ngModel)]="vehiculo.matricula" 
+               class="form-control"
+               name="frm_matricula"
+               type="text"  
+               placeholder="A5239DH, 3521DDD, ...">
+        <span  class="help-block">Si la matricula es extranjera, se consignará Cod Iso País/Matricula. ej E/3652BSD</span>
+    </div>
+
+    <div class="form-group">
+        <label for="frm_bastidor">Bastidor</label>
+        <input [(ngModel)]="vehiculo.bastidor" 
+               class="form-control"
+               name="frm_bastidor"
+               type="text">
+        <span  class="help-block">Recuerda que son 17 dígitos.(contador)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="frm_marca_modelo">Marca y modelo</label>
+        <input [(ngModel)]="vehiculo.marca_modelo" 
+               class="form-control"
+               name="frm_marca_modelo"
+               type="text"  
+               placeholder="">
+    </div>    
+
+    </form>
+
+
+  </div>
+</div>

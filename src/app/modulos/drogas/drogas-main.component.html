@@ -1,0 +1,184 @@
+<div class="content-header">
+  <h1>Drogas </h1>
+</div>
+
+<div class="content-box">
+  <div class="section">
+
+    <h3>Selecciona expediente:</h3>
+      <app-dropdown-expediente (selected)="prueba.expediente=$event"></app-dropdown-expediente>
+    <hr/>
+
+
+    <h3>Selecciona una persona:</h3>
+      <app-dropdown-persona (selected)="prueba.probante=$event"></app-dropdown-persona>
+    <hr/>
+
+
+    <h3>Selecciona un vehículo:</h3>
+      <app-dropdown-vehiculo (selected)="prueba.vehiculo=$event"></app-dropdown-vehiculo>
+    <hr>
+
+
+    <h3>Con respecto a la prueba de drogas:</h3><!---------------------------------------------->
+
+    <div class="well well-sm">Derechos y garantías prueba drogas</div>
+
+      <div class="form-group">
+        <label for="frm_derechos_fecha">Fecha inicio de la información de derechos</label>
+        <div calss="input-group">
+          <input [(ngModel)]="prueba.derechos_fecha" 
+                  class="form-control"
+                  name="frm_derechos_fecha"
+                  type="date"  
+                  placeholder="Esta fecha corresponde con el inicio de las acciones por los actuantes">
+        </div>
+      </div>     
+
+      <div class="form-group">
+        <label for="frm_derechos_hora">Hora inicio de la información de derechos</label>
+        <input [(ngModel)]="prueba.derechos_hora" 
+                class="form-control"
+                name="frm_derechos_hora"
+                type="time"  
+                placeholder="Esta hora corresponde con el inicio de la lectura/información de los derechos de la prueba ">
+      </div>    
+
+      <div class="form-group">
+        <label>Motivo de la práctica de la prueba</label>
+        <div class="checkbox">
+          <label>
+            <input [(ngModel)]="prueba.motivo.control"
+                   type="checkbox"> Control preventivo
+          </label>
+        </div>
+
+                <div class="checkbox">
+          <label>
+            <input [(ngModel)]="prueba.motivo.signos"
+                   type="checkbox">Signos externos de consumo
+          </label>
+        </div>
+
+                <div class="checkbox">
+          <label>
+            <input [(ngModel)]="prueba.motivo.infraccion"
+                   type="checkbox">Infracción administrativa
+          </label>
+        </div>
+
+                <div class="checkbox">
+          <label>
+            <input [(ngModel)]="prueba.motivo.accidente"
+                   type="checkbox">Accidente de tráfico
+          </label>
+        </div>
+      </div>   
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <div class="form-group">
+        <label for="frm_prueba_lugar">Lugar de práctica de la prueba</label>
+        <input [(ngModel)]="prueba.lugar_calle" 
+               class="form-control"
+               name="frm_prueba_lugar"
+               type="text"  
+               placeholder="calle Pedro Juan Perpiñan">
+        <span  class="help-block">Introduce la calle con número o dependencia</span>
+    </div>   
+
+    <div class="form-group">
+        <label for="frm_prueba_ciudad">Lugar de práctica de la prueba</label>
+        <input [(ngModel)]="prueba.lugar_ciudad" 
+               class="form-control"
+               name="frm_prueba_ciudad"
+               type="text"  
+               placeholder="¿Elche?">
+    </div>  
+
+
+    lugar_hora_dchos: Date;
+    agente_prueba: string;
+    //persona
+    probante_detenido: boolean = false;
+-->
+
+
+    <div class="form-group">
+            <label for="frm_prb_detenido" >¿El probante se encuentra detenido?</label>
+            <br/>
+            <div class="btn-group" role="group" aria-label="frm_prb_detenido" name="frm_prb_detenido">
+                <button type="button" 
+                        class="btn btn-default"
+                        [class.btn-primary]="!prueba.probante_detenido"
+                        (click)="prueba.probante_detenido=false">No está detenido</button>
+                <button type="button" 
+                        class="btn btn-default" 
+                        [class.btn-danger]="prueba.probante_detenido"
+                        (click)="prueba.probante_detenido=true">Sí, está detenido</button>
+            </div>
+        </div>
+
+
+
+      
+<!--
+         <ngl-form-element label="¿El probante se encuentra DETENIDO?" [error]="hasError ? error : null" class="slds-m-top--small">
+                    <select nglFormControl class="slds-select" [required]="required" [(ngModel)]="prb_520t" (change)="cambioDetenido()">
+                        <option>Si</option>
+                        <option>No</option>
+                    </select>
+                </ngl-form-element>
+
+                <div *ngIf="prb_520t == 'Si'">
+                    <ngl-form-element  label="Motivo de la detención / Numero expediente" [error]="hasError ? error : null" class="slds-m-top--small">
+                    <input nglFormControl type="text" placeholder="" [required]="required" [(ngModel)]="prb_520_xq">
+                    </ngl-form-element>
+                </div>
+
+                 <ngl-form-element label="Lugar de la prueba" [error]="hasError ? error : null" class="slds-m-top--small">
+                  <input nglFormControl type="text" placeholder="¿Qué calle o lugar?" [required]="required" [(ngModel)]="prb_lugar">
+                </ngl-form-element>
+
+                <ngl-form-element label="Fecha inicio de la prueba" [error]="hasError ? error : null" class="slds-m-top--small">
+                  <input nglFormControl type="date" placeholder="¿Qué calle o lugar?" [required]="required" [(ngModel)]="prb_fecha">
+                </ngl-form-element>
+
+                <ngl-form-element label="Hora inicio de la prueba" [error]="hasError ? error : null" class="slds-m-top--small">
+                  <input nglFormControl type="time" placeholder="¿Qué calle o lugar?" [required]="required" [(ngModel)]="prb_hora">
+                </ngl-form-element>
+
+-->
+
+    
+  </div>
+
+
+
+</div>
+<div class="print-box">
+  
+
+
+
+
+  <app-drogas-dchos [prueba]="prueba" > </app-drogas-dchos>
+</div>
+
+rqwerqwe
+<div (collapsed)="collapsed($event)"
+     (expanded) ="expanded($event)"
+     [collapse] ="isCollapsed"
+     class="card card-block card-header">
+  <div class="well well-lg">Some content</div>
+</div>
+qerqwe

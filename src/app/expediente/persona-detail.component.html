@@ -1,0 +1,192 @@
+
+
+<div class="content-header">
+  <h1>Edición de persona </h1>
+</div>
+
+<div class="content-box">
+  <div class="section">
+      
+
+
+
+
+<form novalidate>
+
+    <!--id: string;-->
+
+    <div class="form-group"> <!--has-success-->
+        <label for="frm_apellidos_nombre">Apellidos y Nombre</label>
+        <input [(ngModel)]="this.persona.apellidos_nombre" 
+               class="form-control"
+               name="frm_apellidos_nombre"
+               type="text"  
+               placeholder="APELLIDOS, Nombre">
+        <span  class="help-block">Por convenio es interesante APELLIDOS en mayúsculas y nombre en minúsculas.</span>
+    </div>
+
+    <div class="form-group">
+        <label for="frm_tipo_documento_id">Tipo documento identidad</label>
+        <input [(ngModel)]="persona.tipo_documento_id" 
+               class="form-control"
+               name="frm_tipo_documento_id"
+               type="text"  
+               placeholder="¿Qué tipo de documento es?¿Dni?¿Pasaporte?">
+        <span  class="help-block">Introduce el tipo sin separadores y las letras en mayúsculas</span>
+    </div>
+
+    <div class="form-group">
+        <label for="frm_numero_documento_id">Número documento identidad</label>
+        <input [(ngModel)]="persona.numero_documento_id" 
+               class="form-control"
+               name="frm_numero_documento_id"
+               type="text"  
+               placeholder="El número va aquí">
+        <span  class="help-block">Introduce el número sin separadores y las letras en mayúsculas</span>
+    </div>    
+
+    <div class="form-group">
+        <label for="frm_genero" >Género de la persona</label>
+        <br/>
+        <div class="btn-group" role="group" aria-label="frm_genero" name="frm_genero">
+            <button type="button" 
+                    class="btn btn-default"
+                    [class.btn-primary]="persona.es_hombre"
+                    (click)="persona.es_hombre=true">Hombre</button>
+            <button type="button" 
+                    class="btn btn-default" 
+                    [class.btn-primary]="!persona.es_hombre"
+                    (click)="persona.es_hombre=false">Mujer</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="frm_fecha_nacim">Fecha de nacimiento</label>
+        <input [(ngModel)]="persona.fecha_nacim" 
+               class="form-control"
+               name="frm_fecha_nacim"
+               type="date"  
+               placeholder="día/mes/año">
+        <!--span  class="help-block">Introduce el número sin separadores y las letras en mayúsculas</span-->
+    </div>  
+
+    <div class="form-group">
+        <label for="frm_lugar_nacim">Lugar de nacimiento</label>
+        <input [(ngModel)]="persona.lugar_nacim" 
+               class="form-control"
+               name="frm_lugar_nacim"
+               type="text"  
+               placeholder="población (provincia)">
+        <span  class="help-block">Introduce población (provincia - PAÍS)</span>
+    </div>  
+
+    <div class="form-group">
+        <label for="frm_nombre_padres">Nombre de los padres</label>
+        <input [(ngModel)]="persona.nombre_padres" 
+               class="form-control"
+               name="frm_nombre_padres"
+               type="text"  
+               placeholder="Juan y Marta">
+        <!--span  class="help-block">Introduce población (provincia - PAÍS)</span-->
+    </div>  
+
+    <hr/>
+
+    <div class="form-group">
+        <label for="frm_domicilio_poblacion">Domicilio en población</label>
+        <input [(ngModel)]="persona.domicilio_poblacion" 
+               class="form-control"
+               name="frm_domicilio_poblacion"
+               type="text"  
+               placeholder="población (provincia)">
+        <span  class="help-block">Introduce población (provincia - PAÍS)</span>
+    </div>  
+
+    <div class="form-group">
+        <label for="frm_domicilio_calle">Domicilio en calle</label>
+        <input [(ngModel)]="persona.domicilio_calle" 
+               class="form-control"
+               name="frm_domicilio_calle"
+               type="text"  
+               placeholder="calle/avda Juan de la Cierva...">
+        <!--span  class="help-block">Introduce población (provincia - PAÍS)</span-->
+    </div> 
+
+    <hr/>
+
+    <div class="form-group">
+        <label for="frm_contacto_telefono">Teléfono de contacto número</label>
+        <input [(ngModel)]="persona.contacto_telef" 
+                class="form-control"
+                name="frm_contacto_telefono"
+                type="tel">
+        <!--span  class="help-block">Introduce población (provincia - PAÍS)</span-->
+    </div> 
+
+    <div class="form-group">
+        <label for="frm_contacto_email">Correo electrónico de contacto</label>
+        <input [(ngModel)]="persona.contacto_email" 
+                class="form-control"
+                name="frm_contacto_email"
+                type="email"
+                placeholder="no@mail.com">
+        <!--span  class="help-block">Introduce población (provincia - PAÍS)</span-->
+    </div> 
+
+    <h3>Permiso o licencia de conducción</h3>
+    <hr/>
+
+
+    <div class="form-group">
+        <label for="frm_carne_tipo">Permiso, licencia o equivalente</label>
+        <input [(ngModel)]="persona.carne_tipo" 
+                class="form-control"
+                name="frm_carne_tipo"
+                type="text"
+                placeholder="B">
+        <!--span  class="help-block">Introduce población (provincia - PAÍS)</span-->
+    </div> 
+
+    <div class="form-group">
+        <label for="frm_carne_numero">Número de permiso o licencia</label>
+        <input [(ngModel)]="persona.carne_numero" 
+                class="form-control"
+                name="frm_carne_numero"
+                type="text">
+        <!--span  class="help-block">Introduce población (provincia - PAÍS)</span-->
+    </div> 
+
+    <div class="form-group">
+        <label for="frm_carne_lug_exp">Lugar de expedición del permiso o licencia</label>
+        <input [(ngModel)]="persona.carne_lug_exp" 
+                class="form-control"
+                name="frm_carne_lug_exp"
+                type="text">
+        <!--span  class="help-block">Introduce población (provincia - PAÍS)</span-->
+    </div> 
+
+    <div class="form-group">
+        <label for="frm_carne_exp_dsd">Fecha de expedición del permiso o licencia</label>
+        <input [(ngModel)]="persona.carne_exp_dsd" 
+               class="form-control"
+               name="frm_carne_exp_dsd"
+               type="date"  
+               placeholder="día/mes/año">
+        <!--span  class="help-block">Introduce el número sin separadores y las letras en mayúsculas</span-->
+    </div>  
+
+    <div class="form-group">
+        <label for="frm_carne_exp_hst">Fecha caducidad del permiso o licencia</label>
+        <input [(ngModel)]="persona.carne_exp_hst" 
+               class="form-control"
+               name="frm_carne_exp_hst"
+               type="date"  
+               placeholder="día/mes/año">
+        <!--span  class="help-block">Introduce el número sin separadores y las letras en mayúsculas</span-->
+    </div>  
+
+    </form>
+
+
+  </div>
+</div>
