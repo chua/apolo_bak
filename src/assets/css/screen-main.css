@@ -363,10 +363,11 @@ a:hover {
 
 
     .folio {
-        border: 1px solid black; 
+        /*border: 1px solid black; */
         background: #fff;
         margin: 10px auto;
         padding-top: 2,5cm;
+        text-align: justify;
     }
 
 
