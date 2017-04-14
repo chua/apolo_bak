@@ -1,11 +1,8 @@
 
 <div class="folio">
 
-    <div class="encabezado">
-        <span>Expediente: <span d-resalte>prueba.expediente.numero</span></span>
-        <img class="logo" src="../../assets/imgs/elche/logo_ayto.png"/>
-    </div>
-
+    <diligencia-modulo [seccion]="'encabezado'"></diligencia-modulo>
+<hr/>
     <div class="cuerpo">
 
         <p class="titulo">DILIGENCIA DE INFORMACIÓN DE DERECHOS Y GARANTIAS SOBRE  LA PRUEBA DE ALCOHOLEMIA.</p>
@@ -13,8 +10,8 @@
         <p>
             <span class="">DILIGENCIA.-</span>
             Por la que se hace constar que a las 
-            <span d-resalte>{{prueba.derechos_hora}}</span> horas del día
-            <span d-resalte>{{prueba.derechos_fecha}} <!--|date:'dd/MM/yyyy'--></span>, 
+            <span d-resalte>{{prueba.derechos_cfg.hora}}</span> horas del día
+            <span d-resalte>{{prueba.derechos_cfg.fecha }} <!--|date:'dd/MM/yyyy'--></span>, 
             se informa {{(prueba.probante.es_hombre?'al':'a la')}} conductor{{(prueba.probante.es_hombre?'':'a')}} 
             <b><span d-resalte>{{(prueba.probante.es_hombre?'D':'Dña')}}</span>. <span d-resalte>{{prueba.probante.apellidos_nombre}}</span></b>, 
             sobre las garantías y derechos que tiene en relación a las pruebas de determinación del grado de impregnación alcohólica:
@@ -97,9 +94,6 @@
             trabajos en beneficio de la comunidad de 31 a 90 días, y, en cualquier caso, a la privación del 
             derecho a conducir vehículos a motor y ciclomotores por tiempo de 1 y hasta 4 años.
         </p>
-        <p>
-            Y para que conste se extiende la presente diligencia que firma, tras leerla y hallarla conforme 
-            en unión de los Agentes Instructores. 
-        </p>
+        <diligencia-modulo [seccion]="'diligencia-cierre'"></diligencia-modulo>
     </div> <!--Cuerpo-->
 </div><!--folio-->

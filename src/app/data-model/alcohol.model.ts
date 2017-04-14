@@ -23,13 +23,10 @@ export class PruebaAlcohol {
     
     //Diligencia derechos
     derechos_cfg: Diligencia = new Diligencia('Derechos y Garantías de la prueba');
-    derechos_fecha: Date;
-    derechos_hora:  Date;
 
     //impregnación
     determina_cfg: Diligencia = new Diligencia('Impregnación Alcohólica');
-    determina_fecha: Date;
-    determina_hora:  Date;
+
 
     //tickets
 

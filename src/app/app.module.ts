@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
@@ -41,6 +41,7 @@ import { VehiculoService } from './data-model/vehiculo.service';
     SharedAppModule
   ],
   providers: [
+    {provide: LOCALE_ID, useValue: 'es_ES'},
     ExpedienteService,
     PersonaService,
     VehiculoService

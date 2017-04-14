@@ -1,6 +1,8 @@
+
 <div class="content-header">
   <h1>Alcoholemia  </h1>
 </div>
+
 
 
 
@@ -19,6 +21,8 @@
       <app-dropdown-vehiculo (selected)="prueba.vehiculo=$event"></app-dropdown-vehiculo>
     <hr>
 
+    <app-componente-nav-bar></app-componente-nav-bar>
+
     <h3>Con respecto a la prueba de alcohol:</h3>
     <!---------------------------------------------->
         
@@ -26,17 +30,20 @@
 </div><!-- section-->
 
 
+
+
+
 <div class="content-box">
   <div class="section">
     <div class="panel panel-info">
-        <div class="panel-heading">
-            <app-diligencia-nav-bar [diligencia]="prueba.derechos_cfg"></app-diligencia-nav-bar>
-        </div>
-        <div class="panel-body" [hidden]="prueba.derechos_cfg.visible">
+
+        <app-diligencia-nav-bar [diligencia]="prueba.derechos_cfg"></app-diligencia-nav-bar>
+
+        <div class="panel-body"> <!--[hidden]="prueba.determina_cfg.visible"-->
             <div class="form-group">
                 <label for="frm_derechos_fecha">Fecha de la información de derechos</label>
                 <div calss="input-group">
-                <input [(ngModel)]="prueba.derechos_fecha" 
+                <input [(ngModel)]="prueba.derechos_cfg.fecha" 
                         class="form-control"
                         name="frm_derechos_fecha"
                         type="date"  
@@ -45,7 +52,7 @@
             </div>     
             <div class="form-group">
                 <label for="frm_derechos_hora">Hora de la información de derechos</label>
-                <input [(ngModel)]="prueba.derechos_hora" 
+                <input [(ngModel)]="prueba.derechos_cfg.hora" 
                         class="form-control"
                         name="frm_derechos_hora"
                         type="time"  
@@ -60,34 +67,72 @@
 
 <!---------------------------------------------->
 
+
 <div class="content-box">
   <div class="section">
     <div class="panel panel-info">
-        <div class="panel-heading">
-            <app-diligencia-nav-bar [diligencia]="prueba.determina_cfg"></app-diligencia-nav-bar>
-        </div>
-        <div class="panel-body" [hidden]="prueba.determina_cfg.visible">
+
+        <app-diligencia-nav-bar [diligencia]="prueba.determina_cfg"></app-diligencia-nav-bar>
+
+        <div class="panel-body"> <!--[hidden]="prueba.determina_cfg.visible"-->
             <div class="form-group">
-                <label for="frm_determina_fecha">Fecha de la información de derechos</label>
+                <label for="frm_derechos_fecha">Fecha de la información de derechos</label>
                 <div calss="input-group">
-                <input [(ngModel)]="prueba.determina_fecha" 
+                <input [(ngModel)]="prueba.derechos_cfg.fecha" 
                         class="form-control"
-                        name="frm_determina_fecha"
+                        name="frm_derechos_fecha"
                         type="date"  
                         placeholder="Esta fecha corresponde con el inicio de las acciones por los actuantes">
                 </div>
             </div>     
             <div class="form-group">
-                <label for="frm_determina_hora">Hora de la información de derechos</label>
-                <input [(ngModel)]="prueba.determina_hora" 
+                <label for="frm_derechos_hora">Hora de la información de derechos</label>
+                <input [(ngModel)]="prueba.derechos_cfg.hora" 
                         class="form-control"
-                        name="frm_determina_hora"
+                        name="frm_derechos_hora"
                         type="time"  
                         placeholder="Esta hora corresponde con el inicio de la lectura/información de los derechos de la prueba ">
             </div>  
             <hr/>
-            <app-alcohol-determ [prueba]="prueba" [hidden]="prueba.determina_cfg.visible"></app-alcohol-determ>
+            <app-alcohol-dchos [prueba]="prueba" [hidden]="prueba.derechos_cfg.visible"></app-alcohol-dchos>
         </div>
     </div>
   </div><!--content-box-->
 </div><!-- section-->
+
+<!---------------------------------------------->
+
+
+<div class="content-box">
+  <div class="section">
+    <div class="panel panel-info">
+
+        <app-diligencia-nav-bar [diligencia]="prueba.derechos_cfg"></app-diligencia-nav-bar>
+
+        <div class="panel-body"> <!--[hidden]="prueba.determina_cfg.visible"-->
+            <div class="form-group">
+                <label for="frm_derechos_fecha">Fecha de la información de derechos</label>
+                <div calss="input-group">
+                <input [(ngModel)]="prueba.derechos_cfg.fecha" 
+                        class="form-control"
+                        name="frm_derechos_fecha"
+                        type="date"  
+                        placeholder="Esta fecha corresponde con el inicio de las acciones por los actuantes">
+                </div>
+            </div>     
+            <div class="form-group">
+                <label for="frm_derechos_hora">Hora de la información de derechos</label>
+                <input [(ngModel)]="prueba.derechos_cfg.hora" 
+                        class="form-control"
+                        name="frm_derechos_hora"
+                        type="time"  
+                        placeholder="Esta hora corresponde con el inicio de la lectura/información de los derechos de la prueba ">
+            </div>  
+            <hr/>
+            <app-alcohol-dchos [prueba]="prueba" [hidden]="prueba.derechos_cfg.visible"></app-alcohol-dchos>
+        </div>
+    </div>
+  </div><!--content-box-->
+</div><!-- section-->
+
+<!---------------------------------------------->
