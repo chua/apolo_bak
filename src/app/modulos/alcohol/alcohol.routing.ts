@@ -1,9 +1,9 @@
 import {Routes} from '@angular/router';
 
-import { AlcoholComponent } from './alcohol.component';
+import { AlcoholMainComponent } from './alcohol-main.component';
 
 
 export const routes: Routes = [
-  { path: '',    component: AlcoholComponent },
+  { path: '',    component: AlcoholMainComponent },
  // { path: ':id', component: PersonaDetailComponent }
 ];

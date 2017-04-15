@@ -1,0 +1,149 @@
+
+<div class="content-header">
+  <h1>Extracción Sanguínea: Oficio a hospital por muestra voluntaria</h1>
+</div>
+
+
+<div class="content-box">
+  <div class="section">
+ <!--     
+    <h3>Selecciona una persona:</h3>
+      <app-dropdown-persona (selected)="probante=$event"></app-dropdown-persona>
+    <hr/>
+
+
+    <h3>Selecciona expediente:</h3>
+      <app-dropdown-expediente (selected)="prueba.expediente=$event"></app-dropdown-expediente>
+    <hr/>
+
+
+
+    <h3>Selecciona un vehículo:</h3>
+      <app-dropdown-vehiculo (selected)="prueba.vehiculo=$event"></app-dropdown-vehiculo>
+    <hr>
+
+    <app-componente-nav-bar></app-componente-nav-bar>
+
+
+
+
+
+
+
+    <h3>Con respecto a la prueba de alcohol:</h3>
+    <!---------------------------------------------->
+
+    <div class="form-group">
+        <label for="frm_prueba_lugar">Selecciona Interesado/a</label>
+        <app-dropdown-persona (selected)="probante=$event"></app-dropdown-persona>
+    </div> 
+
+    <div class="form-group">
+        <label for="frm_hospital">Lugar de práctica de la extracción</label>
+        <input [(ngModel)]="hospital_destino" 
+               class="form-control"
+               name="frm_hospital"
+               type="text">
+        <span  class="help-block">General Universitario, Vinalopó, etc..</span>
+    </div> 
+
+
+        <div class="form-group">
+            <label for="frm_fecha">Fecha de la información de derechos</label>
+            <div calss="input-group">
+            <input [(ngModel)]="fecha" 
+                    class="form-control"
+                    name="frm_fecha"
+                    type="date"  
+                    placeholder="Esta fecha corresponde con el inicio de las acciones por los actuantes">
+            </div>
+        </div>     
+        <div class="form-group">
+            <label for="frm_hora">Hora de la información de derechos</label>
+            <input [(ngModel)]="hora" 
+                    class="form-control"
+                    name="frm_hora"
+                    type="time"  
+                    placeholder="Esta hora corresponde con el inicio de la lectura/información de los derechos de la prueba ">
+        </div>  
+
+
+
+  </div><!--content-box-->
+</div><!-- section-->
+
+
+
+<hr/>
+
+
+
+
+<div class="content-box">
+  <div class="section">
+
+    <!-- ------------------------------------------Oficio------------ -->
+    <div class="folio">
+
+        <div class="encabezado">
+            Texto del encabezado
+        </div> <!-- Encabezado -->
+
+    <div class="cuerpo">
+
+        <p class="titulo-oficio">OFICIO</p>
+
+        <p>caja de oficio</p>
+
+        <p class="titulo">
+            A/ SR. Director del Hospital <span d-resalte>{{hospital_destino?hospital_destino:'________________________'}}</span> de Elche.</p>
+
+        <p class="titulo">ASUNTO: SOLICITUD DE EXTRACCIÓN Y ANALÍTICA DE MUESTRAS DE SANGRE</p>
+
+        <p>
+            En Elche siendo las <span d-resalte>{{hora?hora:'______'}}</span> horas del 
+            día ___ de _______ de 20__, 
+            por tenerlo interesado en diligencias policiales de referencia, y a 
+            SOLICITUD del conductor{{(probante.es_hombre?'':'a')}}            
+            <b><span d-resalte>{{(probante.es_hombre?'D':'Dña')}}. {{probante.apellidos_nombre}}</span>, 
+            <span d-resalte>{{probante.tipo_documento_id?'con '+probante.tipo_documento_id:'INDOCUMENTADO'}} 
+            {{probante.numero_documento_id?'número':''}} {{probante.numero_documento_id}}</span></b>, 
+            y en uso del derecho de contraste de las pruebas de determinación 
+            alcohólica y detección de presencia de drogas que le asiste de acuerdo con la legislación vigente, 
+            o ante la imposibilidad de realizar las pruebas obligatorias legalmente establecidas debido a:
+            _________________________________________________________________________________
+        </p>
+        <p>
+            Se SOLICITA, que por personal sanitario a su cargo, en virtud de la ORDEN/JUS/1291/2010, se
+            realice la EXTRACCIÓN, CUSTODIA y CONSERVACIÓN de dos muestras de sangre de 5 ml,
+            preferentemente en tubos con fluoruro sódico, en condiciones idóneas, para determinar la posible
+            presencia de alcohol o drogas en sangre, al solicitante, significar que la limpieza de la zona de
+            venopunción no se realice con alcohol.
+        </p>
+        <p>
+            Que dichas muestras sean remitidas al Instituto de Medicina Legal de Valencia para su análisis,
+            garantizándose el protocolo de cadena de custodia establecido, dando cuenta de los resultados
+            obtenidos a esta Policía Local mediante Fax al: 966658101.
+        </p>
+        <p>
+            tabla de firmas
+        </p>
+
+        <p>
+            pie
+        </p>
+    </div> <!--Cuerpo-->
+
+
+    <div>
+        pie
+    </div> <!-- Pie -->
+
+
+</div><!--folio-->
+
+
+
+
+  </div>
+</div>

@@ -33,6 +33,11 @@ export const routes = [
     loadChildren: './modulos/drogas/drogas.module#DrogasModule'
   },
   {
+    path: 'sangre',
+    data: ['Extrac. Sangre'],
+    loadChildren: './modulos/sangre/sangre.module#SangreModule'
+  }, 
+  {
     path: '**',
     data:[''],
     redirectTo: '/error'

@@ -7,7 +7,7 @@ import { SharedAppModule } from '../../common/shared-app/shared-app.module';
 import { RouterModule } from '@angular/router';
 import { routes } from './alcohol.routing';
 
-import { AlcoholComponent } from './alcohol.component';
+import { AlcoholMainComponent } from './alcohol-main.component';
 import { AlcoholDchosComponent } from './alcohol.dchos.component';
 import { AlcoholDetermComponent } from './alcohol.determ.component';
 
@@ -21,7 +21,7 @@ import { AlcoholDetermComponent } from './alcohol.determ.component';
     
   ],
   declarations: [
-    AlcoholComponent,
+    AlcoholMainComponent,
     AlcoholDchosComponent,
     AlcoholDetermComponent,
 

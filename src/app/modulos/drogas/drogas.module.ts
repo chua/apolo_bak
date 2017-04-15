@@ -14,7 +14,7 @@ import { routes } from './drogas.routing';
 
 
 import { DrogasMainComponent } from './drogas-main.component';
-import { DrogasDchosComponent } from './drogas-01-dchos.component';
+import { DrogasDchosComponent } from './dl-drogas-derechos.component';
 
 
 

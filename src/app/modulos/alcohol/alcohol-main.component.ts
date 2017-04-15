@@ -7,12 +7,12 @@ import { PruebaAlcohol } from '../../data-model/alcohol.model';
 
 @Component({
   selector: 'app-alcohol',
-  templateUrl: './alcohol.component.html',
+  templateUrl: './alcohol-main.component.html',
 
 })
 
 
-export class AlcoholComponent {
+export class AlcoholMainComponent {
 
 
   private prueba:  PruebaAlcohol = new PruebaAlcohol(); //Preparamos la prueba actual y que se conserve.

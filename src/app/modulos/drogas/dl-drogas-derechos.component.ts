@@ -10,14 +10,16 @@ import { PruebaDrogas } from './drogas.model';
 
 
 @Component({
-  selector: 'app-drogas-dchos',
-  templateUrl: './drogas-01-dchos.component.html'
+  selector:    'app-drogas-dchos',
+  templateUrl: './dl-drogas-derechos.component.html'
 })
 
 
 export class DrogasDchosComponent {
-  @Input() prueba: PruebaDrogas;
 
+  probante: Persona =new Persona();
+  probante_detenido: boolean = false;
+  probante_calidad: number = 0; //0 conductor 1 ocupante 2 peatón
   
   constructor() { }
 
