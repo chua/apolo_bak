@@ -1,0 +1,488 @@
+
+<div class="content-header">
+  <h1>Prueba de drogas: Signos Externos</h1>
+</div>
+
+<div class="content-box">
+  <div class="section">
+
+    <div class="form-group">
+        <label for="frm_prueba_lugar">Selecciona el expediente</label>
+        <app-dropdown-expediente (selected)="prueba.expediente=$event"></app-dropdown-expediente>
+    </div> 
+
+    <div class="form-group">
+        <label for="frm_prueba_lugar">Selecciona Interesado/a</label>
+        <app-dropdown-persona (selected)="prueba.probante=$event"></app-dropdown-persona>
+    </div> 
+
+    <hr/>
+
+    <div class="form-group">
+
+      <label>1) Actitud y comportamiento:</label>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g1_nervioso" type="checkbox"> Nervioso
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g1_inadecuado"
+                  type="checkbox"> Inadecuado, contento, eufórico
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g1_provocativo"
+                  type="checkbox"> Provocativo
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g1_lloroso"
+                  type="checkbox"> Lloroso
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g1_adormilado"
+                  type="checkbox"> Adormilado
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g1_picores"
+                  type="checkbox"> Se rasca la cara continuamente
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g1_no_comprende"
+                  type="checkbox"> No comprende instrucciones
+          </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="frm_otras_alteraciones_1">Otras alteraciones, señalar:</label>
+        <input [(ngModel)]="prueba.signos_previos.g1_otras_alteraciones" 
+                class="form-control"
+                name="frm_otras_alteraciones_1"
+                type="text">
+                <span  class="help-block">Relativas a la actitud y al comportamiento</span>
+    </div>  
+    <!-- ------ -->
+
+    <div class="form-group">
+
+      <label>2) Aspecto corporal general:</label>
+
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g2_temblor"
+                  type="checkbox"> Provocativo
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g2_sudoracion"
+                  type="checkbox"> Lloroso
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g2_inquietud"
+                  type="checkbox"> Adormilado
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g2_resp_superficial"
+                  type="checkbox"> Se rasca la cara continuamente
+          </label>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="frm_otras_alteraciones_2">Otras alteraciones, señalar:</label>
+        <input [(ngModel)]="prueba.signos_previos.g2_otras_alteraciones" 
+                class="form-control"
+                name="frm_otras_alteraciones_2"
+                type="text">
+                <span  class="help-block">Relativas al aspecto corporal general</span>
+    </div>  
+    <!-- ------ -->
+
+    <div class="form-group">
+      <label>3) Aspecto de la cara:</label>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g3_parpadeo"
+                  type="checkbox"> Parpadeo Constante
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g3_nariz_roja"
+                  type="checkbox"> Nariz roja
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g3_esnifa"
+                  type="checkbox"> Esnifa constantemente
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g3_saliva"
+                  type="checkbox"> Traga saliva
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g3_olor_porro"
+                  type="checkbox"> Olor a porro
+          </label>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="frm_otras_alteraciones_3">Otras alteraciones, señalar:</label>
+        <input [(ngModel)]="prueba.signos_previos.g3_otras_alteraciones" 
+                class="form-control"
+                name="frm_otras_alteraciones_3"
+                type="text">
+                <span  class="help-block">Relativas al aspecto de la cara</span>
+    </div>  
+
+    <!-- ------ -->
+
+    <div class="form-group">
+      <label>4) Habla / lenguaje:</label>
+
+      <div class="checkbox">
+          <label>
+            <input [(ngModel)]="prueba.signos_previos.g4_locuacidad" 
+            type="checkbox"> Locuacidad, hilaridad, no para de hablar
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g4_dificultosa" 
+          type="checkbox"> Habla dificultosa, lenta, mal articulada
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g4_tonobajo" 
+          type="checkbox"> Voz de tono bajo y rasposo
+          </label>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="frm_otras_alteraciones_4">Otras alteraciones, señalar:</label>
+        <input [(ngModel)]="prueba.signos_previos.g4_otras_alteraciones" 
+                class="form-control"
+                name="frm_otras_alteraciones_4"
+                type="text">
+                <span  class="help-block">Relativas al habla o al lenguaje</span>
+    </div>  
+
+    <!-- ------ -->
+
+    <div class="form-group">
+      <label>5) Coordinación</label>
+
+      <div class="checkbox">
+          <label>
+            <input [(ngModel)]="prueba.signos_previos.g5_tambaleante" 
+            type="checkbox"> Tambaleante, sin equilibrio
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+            <input [(ngModel)]="prueba.signos_previos.g5_descoordinado" 
+            type="checkbox"> Movimientos descoordinados
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g5_temblor_gen" 
+          type="checkbox"> Temblor generalizado
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g5_temblor_piernas" 
+          type="checkbox"> Temblores de piernas
+          </label>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="frm_otras_alteraciones_5">Otras alteraciones, señalar:</label>
+        <input [(ngModel)]="prueba.signos_previos.g5_otras_alteraciones" 
+                class="form-control"
+                name="frm_otras_alteraciones_5"
+                type="text">
+                <span  class="help-block">Relativas a la coordinación</span>
+    </div>       
+
+
+ <!-- ------ -->
+    <div class="form-group">
+      <label>6) Aspecto de la conjuntiva:</label>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g6_conjuntiva" 
+                 type="checkbox"> Conjuntiva enrojecida o con edema
+          </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>7) Movimientos oculares de seguimiento: ¿Existe brusquedad y/o espasmo?</label>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g7_mov_oculares" type="checkbox"> Si, en uno o ambos ojo
+          </label>
+      </div>
+    </div>
+       
+    <div class="form-group">
+      <label>8) Valoración del Nistagmo horizontal:</label><br/>
+      <label>8.1 ¿Aparición de nistagmo seguimiento horizontal?</label><br/>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g8_nistagmo_seguimiento" type="checkbox"> Si, en uno o ambos ojos
+          </label>
+      </div>
+      <label>8.2 ¿Aparición de nistagmo en ángulo máx.?</label><br/>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g8_nistagmo_angmax" type="checkbox"> Si, en uno o ambos ojos
+          </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>9) Diámetro pupilar:</label>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g9_pupila_pequena" type="checkbox"> Contracción en ambos ojos (= 2 mm)
+          </label>
+      </div>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g9_pupila_grande"  type="checkbox"> Dilatación en ambos ojos (= 6,5 mm)
+          </label>
+      </div>
+      imágen
+    </div>
+
+
+    <div class="form-group">
+      <label>10) Reacción de la pupila a la luz:</label>
+      <div class="checkbox">
+          <label>
+          <input [(ngModel)]="prueba.signos_previos.g10_reaccion_luz" type="checkbox"> Enlentecida o apenas perceptible
+          </label>
+      </div>
+    </div>
+
+  </div><!--content-box-->
+</div><!-- section-->
+
+
+<hr/>
+
+
+<div id="print-box" class="content-box">
+  <div class="section">
+
+    <!-- ------------------------------------------Oficio------------ -->
+    <div class="folio">
+        <encabezado-helper [expediente]="prueba.expediente.numero"></encabezado-helper>
+
+        <div class="cuerpo">
+            <p>
+                En la ciudad de Elche, siendo las ________ horas del día ____________, el agente con NIP_______, en funciones de policía judicial de tráfico con la formación específica requerida por el artículo 796.1.7o de la Ley de Enjuiciamiento Criminal,
+                <b>CERTIFICA</b> que 
+                <persona-helper [persona]="prueba.probante"></persona-helper>
+                , siendo requerida para someterse a las pruebas de detección, de presencia de drogas en el organismo, <b>presenta los siguientes signos</b>:
+            </p>
+              <table>
+                <tr>
+                  <td style="width: 49.5%; align-content: left; vertical-align: top">
+                <table class="con_borde" 
+                style="border: 1px solid black;">
+                  <tr>
+                    <th>A. Observaciones generales a realizar mientras se solicita documentación, se inspecciona el vehículo, etc:</th>
+                  </tr>
+
+                  <tr>
+                    <td style="border: 1px solid black;">
+                      1) Actitud y comportamiento:<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g1_nervioso" type="checkbox"> Nervioso <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g1_inadecuado" type="checkbox"> Inadecuado, contento, eufórico <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g1_provocativo" type="checkbox"> Provocativo <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g1_lloroso" type="checkbox"> Lloroso <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g1_adormilado" type="checkbox"> Adormilado <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g1_picores" type="checkbox"> Se rasca la cara continuamente <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g1_no_comprende" type="checkbox"> No comprende instrucciones <br/>
+                      Otras alteraciones, señalar: {{prueba.signos_previos.g1_otras_alteraciones}}
+      
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      2) Aspecto corporal general:<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g2_temblor" type="checkbox"> Temblor <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g2_sudoracion" type="checkbox"> Sudoración inapropiada <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g2_inquietud" type="checkbox"> Inquietud <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g2_resp_superficial" type="checkbox"> Respiración superficial <br/>
+                      Otras alteraciones, señalar: {{prueba.signos_previos.g2_otras_alteraciones}}
+
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      3) Aspecto de la cara:<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g3_parpadeo" type="checkbox"> Parpadeo Constante <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g3_nariz_roja" type="checkbox"> Nariz roja <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g3_esnifa" type="checkbox"> Esnifa constantemente <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g3_saliva" type="checkbox"> Traga saliva <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g3_olor_porro" type="checkbox"> Olor a porro <br/>
+                      Otras alteraciones, señalar: {{prueba.signos_previos.g3_otras_alteraciones}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      4) Habla / lenguaje<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g4_locuacidad" type="checkbox"> Locuacidad, hilaridad, no para de hablar <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g4_dificultosa" type="checkbox"> Habla dificultosa, lenta, mal articulada <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g4_tonobajo" type="checkbox"> Voz de tono bajo y rasposo <br/>
+                      Otras alteraciones, señalar: {{prueba.signos_previos.g4_otras_alteraciones}}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      5) Coordinación<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g5_tambaleante" type="checkbox"> Tambaleante, sin equilibrio <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g5_descoordinado" type="checkbox"> Movimientos descoordinados <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g5_temblor_gen" type="checkbox"> Temblor generalizado <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g5_temblor_piernas" type="checkbox"> Temblores de piernas <br/>
+                      Otras alteraciones, señalar: {{prueba.signos_previos.g5_otras_alteraciones}}
+                    </td>
+                  </tr>
+                </table>
+                  </td>
+
+                  <td style="width: 1%">&nbsp;</td>
+
+                  <td style="width: 49.5%; align-content: right; vertical-align: top">
+
+
+                <table style="border: 1px solid black;">
+                  <tr>
+                    <th>B. Signos específicos:</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      6) Aspecto de la conjuntiva:
+                      <input [(ngModel)]="prueba.signos_previos.g6_conjuntiva" type="checkbox"> Conjuntiva enrojecida o con edema <br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      7) Movimientos oculares de seguimiento:<br/>
+                      ¿Existe brusquedad y/o espasmo?<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g7_mov_oculares" type="checkbox"> Si, en uno o ambos ojos <br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      8) Valoración del Nistagmo horizontal:<br/>
+                      8.1 ¿Aparición de nistagmo seguimiento horizontal?<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g8_nistagmo_seguimiento" type="checkbox"> Si, en uno o ambos ojos <br/>
+                      8.2 ¿Aparición de nistagmo en ángulo máx.?<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g8_nistagmo_angmax" type="checkbox"> Si, en uno o ambos ojos <br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      9) Diámetro pupilar:<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g9_pupila_pequena" type="checkbox"> Contracción en ambos ojos (= 2 mm) <br/>
+                      <input [(ngModel)]="prueba.signos_previos.g9_pupila_grande"  type="checkbox"> Dilatación en ambos ojos (= 6,5 mm) <br/>
+                      imágen
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      10) Reacción de la pupila a la luz:<br/>
+                      <input [(ngModel)]="prueba.signos_previos.g10_reaccion_luz" type="checkbox"> Enlentecida o apenas perceptible <br/>
+                    </td>
+                  </tr>
+                </table>
+
+                <br/>
+                 <table style="border: 1px solid black; width: 100%">
+                  <tr>
+                    <th>Otras observaciones:</th>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;otras!</td>
+                  </tr>
+                </table>
+                <br/>
+
+                <table style="border: 1px solid black; width: 100%">
+                  <tr>
+                    <th>Criterios Vía penal consensuados con Fiscalía:</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      Signos generales + Signo específico 7<br/>
+                      Signos generales + Signo específico 8 (al menos uno)<br/>
+                      Signos generales + Signo específico 10<br/>
+                      Signos generales + Signo específico 6 + 9<br/>
+                      Signos generales + Signo específico 6 + alguno de 7, 8 ó 10<br/>
+                      Signos generales + Signo específico 9 + alguno de 7, 8 ó 10
+                      </td>
+                  </tr>
+                </table>
+
+
+
+
+                  </td>
+                </tr>
+              </table>
+            
+
+               
+
+                <p>
+                
+
+                
+                </p>
+
+                <p>
+                Y para que conste se extiende la presente en el lugar, fecha y hora arriba consignados, siendo firmada por el agente actuante.
+
+                __Firma del agente__
+                </p>
+  
+  
+    </div>
+
+    <div id="pie_pagina"></div>
+
+    </div> <!--folio-->
+
+      </div><!--content-box-->
+</div><!-- section-->

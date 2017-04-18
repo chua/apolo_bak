@@ -18,6 +18,7 @@ import { BusquedaActaPipe } from './common/app-menu/search-filter.pipe';
 import { AppFooterComponent } from './common/app-footer/app-footer.component';
 
 //Servicios
+//import { AtestadoService } from './data-model/atestado.service';
 import { PersonaService } from './data-model/persona.service';
 import { ExpedienteService } from './data-model/expediente.service';
 import { VehiculoService } from './data-model/vehiculo.service';
@@ -42,6 +43,7 @@ import { VehiculoService } from './data-model/vehiculo.service';
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'es_ES'},
+   // AtestadoService,
     ExpedienteService,
     PersonaService,
     VehiculoService

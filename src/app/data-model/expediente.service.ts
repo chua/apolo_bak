@@ -25,8 +25,8 @@ export class ExpedienteService {
     return (this.Expedientes[idx]);
   }
 
-  getIdxfromExpediente (prs: Expediente):number {
-    return (this.Expedientes.indexOf(prs));
+  getIdxfromExpediente (idx: Expediente):number {
+    return (this.Expedientes.indexOf(idx));
   }
 
   removeExpediente(Expediente: Expediente): void {

@@ -1,0 +1,17 @@
+<b>
+  <span d-resalte>
+    {{(persona.es_hombre?'D':'Dña')}}.  
+    {{persona.apellidos_nombre}}
+  </span>
+</b> 
+<span d-resalte>{{persona.tipo_documento_id?'con '+persona.tipo_documento_id:' sin DOCUMENTO IDENTIFICATIVO'}}</span> 
+<span d-resalte>{{persona.numero_documento_id?'número':''}} {{persona.numero_documento_id}}</span>, 
+nacid{{(persona.es_hombre?'o':'a')}} el <span d-resalte>{{persona.fecha_nacim}}</span> 
+en <span d-resalte>{{persona.lugar_nacim}}</span> 
+hij{{(persona.es_hombre?'o':'a')}} de <span d-resalte>{{persona.nombre_padres}}</span>, 
+con domicilio en <span d-resalte>{{persona.domicilio_poblacion}}</span> en 
+<span d-resalte>{{persona.domicilio_calle}}</span>, 
+{{persona.contacto_telef?'con':'sin'}} teléfono de contacto 
+<span d-resalte>{{persona.contacto_telef?'número '+persona.contacto_telef+', ':''}}</span>
+{{persona.contacto_email?'con':'sin'}} dirección de correo electrónico 
+<span d-resalte>{{persona.contacto_email}}</span>.

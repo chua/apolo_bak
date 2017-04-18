@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PruebaDrogas } from './drogas.model';
+import { PruebaDrogas } from '../../data-model/drogas.model';
 
 
 @Component({
@@ -10,6 +10,9 @@ import { PruebaDrogas } from './drogas.model';
 })
 export class DrogasMainComponent implements OnInit {
 
+
+  //todo: hacer que la recuerde
+  prueba: PruebaDrogas = new PruebaDrogas();
   
   ngOnInit() {console.log("Drogas Init");}
  

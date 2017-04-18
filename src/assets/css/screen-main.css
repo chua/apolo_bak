@@ -33,6 +33,11 @@ a:hover {
   display: none !important;
 }
 
+.puntero-mano {
+  cursor:pointer; 
+  cursor: hand
+}
+
 /************* START TOP MENU **************/
 
 #top-menu {

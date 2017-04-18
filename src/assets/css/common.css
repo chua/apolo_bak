@@ -1,14 +1,31 @@
-    .encabezado {
-      display: block;
+    
+    
+    
+    
+    .folio .encabezado {
+      display: inline-block;
       height: 50px;
-      /*border: 1px solid black;*/
+      width: 100%;
+      /*border-bottom: 1px solid black;*/
     }
 
+    .folio .encabezado .texto {
+      width: 49%;
+      /*border: 1px solid green;*/
+      float:left;
+    }
 
     .folio .encabezado .logo {
       height: 49px;
+      /*border: 1px solid red;*/
       float: right;
     }
+
+
+
+
+
+
 
     .folio p .titulo {
       font-size: 12px;
@@ -30,5 +47,8 @@
         text-align: center; /*?*/
     }
 
+    table .con_borde {
+      border: 1px solid black;
+    }
 
 

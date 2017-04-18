@@ -20,7 +20,7 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let vehiculo of vehiculos" (click)="select(vehiculo)">
+        <tr *ngFor="let vehiculo of vehiculos" (click)="select(vehiculo)" class="puntero-mano">
           <td>{{vehiculo.matricula}}</td>
           <td>{{vehiculo.bastidor}}</td>
           <td>{{vehiculo.marca_modelo}}</td>

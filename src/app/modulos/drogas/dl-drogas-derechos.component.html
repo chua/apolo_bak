@@ -8,76 +8,187 @@
   <div class="section">
 
     <div class="form-group">
-        <label for="frm_prueba_lugar">Selecciona Interesado/a</label>
-        <app-dropdown-persona (selected)="probante=$event"></app-dropdown-persona>
+        <label for="frm_prueba_lugar">Selecciona el expediente</label>
+        <app-dropdown-expediente (selected)="prueba.expediente=$event"></app-dropdown-expediente>
     </div> 
 
     <div class="form-group">
+        <label for="frm_prueba_lugar">Selecciona Interesado/a</label>
+        <app-dropdown-persona (selected)="prueba.probante=$event"></app-dropdown-persona>
+    </div> 
+
+    <div class="form-group" >
+        <label for="frm_prueba_lugar">El implicado es:</label>
+        <app-dropdown-persona-calidad (selected)="prueba.probante_calidad=$event"></app-dropdown-persona-calidad>
+        <span  class="help-block">En el caso los peatones, no será necesario introducir vehículo</span>
+    </div> 
+
+    <div class="form-group" *ngIf="prueba.probante_calidad != 2">
         <label for="frm_prueba_lugar">Selecciona vehículo</label>
-        <app-dropdown-vehiculo (selected)="vehiculo=$event"></app-dropdown-vehiculo>
-        <span  class="help-block">En el caso los peatones, no seleccionar ningún item</span>
+        <app-dropdown-vehiculo (selected)="prueba.vehiculo=$event"></app-dropdown-vehiculo>
+    </div> 
+
+    <div class="form-group">
+        <label for="frm_derechos_fecha">Fecha inicio de la información de derechos</label>
+        <div calss="input-group">
+            <input [(ngModel)]="prueba.derechos_fecha" 
+                    class="form-control"
+                    name="frm_derechos_fecha"
+                    type="date"  
+                    placeholder="Esta fecha corresponde con el inicio de las acciones por los actuantes">
+        </div>
+    </div>     
+
+    <div class="form-group">
+        <label for="frm_derechos_hora">Hora inicio de la información de derechos</label>
+        <input [(ngModel)]="prueba.derechos_hora" 
+                class="form-control"
+                name="frm_derechos_hora"
+                type="time"  
+                placeholder="Esta hora corresponde con el inicio de la lectura/información de los derechos de la prueba ">
+    </div>    
+
+    <div class="form-group">
+        <label>Motivo de la práctica de la prueba</label>
+        <div class="checkbox">
+            <label>
+            <input [(ngModel)]="prueba.motivo.control"
+                    type="checkbox"> Control preventivo
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+            <input [(ngModel)]="prueba.motivo.signos"
+                    type="checkbox">Signos externos de consumo
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+            <input [(ngModel)]="prueba.motivo.infraccion"
+                    type="checkbox">Infracción administrativa
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+            <input [(ngModel)]="prueba.motivo.accidente"
+                    type="checkbox">Accidente de tráfico
+            </label>
+        </div>
+    </div>   
+
+
+
+  <div>
+    requirente_externo: boolean = true;
+    requirente_cuerpo: string;
+    requierente yo mismo?¿
+    </div>
+
+    <div class="form-group" >
+        <label for="frm_prueba_lugar">El requirente de la prueba es:</label>
+        <app-dropdown-persona-calidad (selected)="prueba.probante_calidad=$event"></app-dropdown-persona-calidad>
     </div> 
 
 
+    <div class="form-group">
+        <label for="frm_req_1">N.I.P Requirente 1</label>
+        <input [(ngModel)]="prueba.requirente_nip_1" 
+                class="form-control"
+                name="frm_req_1"
+                type="text">
+                <span  class="help-block">Haz constar el número de identificación profesional del requirente</span>
+    </div>
 
+    <div class="form-group">
+        <label for="frm_req_2">N.I.P. Requirente 2</label>
+        <input [(ngModel)]="prueba.requirente_nip_2" 
+                class="form-control"
+                name="frm_req_2"
+                type="text">
+                <span  class="help-block">Haz constar el número de identificación profesional del requirente</span>
+    </div>
 
+    <div class="form-group">
+        <label for="frm_prb_detenido" >¿El probante se encuentra detenido?</label>
+        <br/>
+        <div class="btn-group" role="group" aria-label="frm_prb_detenido" name="frm_prb_detenido">
+            <button type="button" 
+                    class="btn btn-default"
+                    [class.btn-primary]="!prueba.probante_detenido"
+                    (click)="prueba.probante_detenido=false">No está detenido</button>
+            <button type="button" 
+                    class="btn btn-default" 
+                    [class.btn-danger]="prueba.probante_detenido"
+                    (click)="prueba.probante_detenido=true">Sí, está detenido</button>
+        </div>
+    </div>
 
+    <div class="form-group" *ngIf="prueba.probante_detenido">
+        <label for="frm_derechos_motivo">Motivo o número de diligencias de la detención</label>
+        <input [(ngModel)]="prueba.probante_detenido_motivo" 
+                class="form-control"
+                name="frm_derechos_motivo"
+                type="text">
+                <span  class="help-block">Haz constar el motivo de la detención y/o número de diligencias correspondientes</span>
+    </div>  
+
+    <div class="form-group">
+        <label for="frm_prb_voluntad" >¿El probante se somete a la prueba?</label>
+        <br/>
+        <div class="btn-group" role="group" aria-label="frm_prb_voluntad" name="frm_prb_voluntad">
+            <button type="button" 
+                    class="btn btn-default"
+                    [class.btn-success]="prueba.conforme_prueba"
+                    (click)="prueba.conforme_prueba=true">Se somete voluntariamente</button>
+            <button type="button" 
+                    class="btn btn-default" 
+                    [class.btn-danger]="!prueba.conforme_prueba"
+                    (click)="prueba.conforme_prueba=false">No desea someterse a las pruebas</button>
+        </div>
+    </div>
+    <hr/>
   </div><!--content-box-->
 </div><!-- section-->
 
 
 
-<hr/>
 
 
-
-<div class="content-box">
+<div id="print-box" class="content-box">
   <div class="section">
-
     <!-- ------------------------------------------Oficio------------ -->
- 
-
-
 
     <div class="folio">
-        <div class="encabezado">
-            <span>Expediente: <span d-resalte>{{prueba.expediente.numero}}</span></span>
-            <img class="logo" src="../../assets/imgs/elche/logo_ayto.png"/>
-        </div>
+        
+        <encabezado-helper [expediente]="prueba.expediente.numero"></encabezado-helper>
 
         <div class="cuerpo">
         
-        <p class="titulo">
-            ACTA DE REQUERIMIENTO, INFORMACION DE DERECHOS E INVESTIGACION DE LA PRUEBA DE DETECCIÓN DE DROGAS
-        </p>
+            <p class="titulo">
+                ACTA DE REQUERIMIENTO, INFORMACIÓN DE DERECHOS E INVESTIGACIÓN <br/>
+                DE LA PRUEBA DE DETECCIÓN DE DROGAS
+            </p>
     
         <p>
-            En <span d-resalte>{{prueba.expediente.lugar}}</span> de 
+            En 
+            <span d-resalte>{{prueba.expediente.lugar}}</span> de 
             <span d-resalte>{{prueba.expediente.ciudad}}</span>, a las 
             <span d-resalte>{{prueba.derechos_hora}}</span> horas del 
-            <span d-resalte>{{prueba.derechos_fecha|date:'dd/MM/yyyy'}}</span>, 
+            <span d-resalte>{{prueba.derechos_fecha}}</span>, 
             el funcionario con NIP <span d-resalte>{{prueba.expediente.instructor}}</span>, en funciones de policía judicial de tráfico, requiere a:
         </p>
         <p>
-            <b><span d-resalte>{{(probante.es_hombre?'D':'Dña')}}</span>.  
-            <span d-resalte>{{probante.apellidos_nombre}}</span> 
-            <span d-resalte>{{probante.tipo_documento_id?'con '+probante.tipo_documento_id:'INDOCUMENTADO'}}</span> 
-            <span d-resalte>{{probante.numero_documento_id?'número':''}} {{probante.numero_documento_id}}</span></b>
-            , nacid{{(probante.es_hombre?'o':'a')}} el <span d-resalte>{{probante.fecha_nacim|date:'dd/MM/yyyy'}}</span> 
-            en <span d-resalte>{{prueba.probante.lugar_nacim}}</span> hij{{(prueba.probante.es_hombre?'o':'a')}} de 
-            <span d-resalte>{{probante.nombre_padres}}</span>, con domicilio en 
-            <span d-resalte>{{probante.domicilio_poblacion}}</span> en 
-            <span d-resalte>{{probante.domicilio_calle}}</span>, 
-            {{prueba.probante.contacto_telef?'con':'sin'}} teléfono de contacto 
-            <span d-resalte>{{prueba.probante.contacto_telef?'número '+prueba.probante.contacto_telef+', ':''}}</span>
-            {{prueba.probante.contacto_email?'con':'sin'}} dirección de correo electrónico 
-            <span d-resalte>{{prueba.probante.contacto_email}}</span>.
+            <persona-helper [persona]="prueba.probante"></persona-helper>
         </p>   
         <p>
             Como
-            <span i18n>{probante_calidad, plural, =0 {conductor} =1 {ocupante} =2 {peatón}}</span>
+            <span i18n>{prueba.probante_calidad, plural, =0 {conductor} =1 {ocupante} =2 {peatón}}</span>
             <span *ngIf="prueba.probante_calidad<2">        
                 del vehículo 
+                #MarcaModelo#
                 <span d-resalte>{{prueba.vehiculo.tipo}}</span> matricula 
                 <span d-resalte>{{prueba.vehiculo.matricula}}</span> 
                 <span *ngIf="prueba.probante_calidad<1">
@@ -89,43 +200,65 @@
                     <span d-resalte>{{prueba.probante.carne_hst}}</span>, 
                 </span>
             </span>
-            para que, tras haber sido requerido a una prueba de detección del alcohol en aire espirado con el siguiente resultado <span d-resalte>{{alc_res}}</span> mg/l., se someta a <b>PRUEBA DE DETECCION DE DROGAS EN FLUIDO ORAL</b>, a lo cual se le informa de que está obligado en cumplimiento con lo dispuesto en el art. 796.1.7a de la Ley de Enjuiciamiento Criminal y el articulo 14.2 del R.D.L. 6/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley de Tráfico, Circulación de Vehículos a Motor y Seguridad Vial. 
+            para que, tras haber sido requerido a una prueba de detección del alcohol en aire espirado con el siguiente 
+            resultado <span d-resalte>{{alc_res}}</span> mg/l., se someta a <b>PRUEBA DE DETECCION DE DROGAS EN FLUIDO ORAL</b>, 
+            a lo cual se le informa de que está obligado en cumplimiento con lo dispuesto en el art. 796.1.7a de la 
+            Ley de Enjuiciamiento Criminal y el articulo 14.2 del R.D.L. 6/2015, de 30 de octubre, por el que se aprueba 
+            el texto refundido de la Ley de Tráfico, Circulación de Vehículos a Motor y Seguridad Vial. 
+            Las pruebas mencionadas se llevan a cabo como consecuencia de:
         </p>
-        Las pruebas mencionadas se llevan a cabo como consecuencia de:<br/>
-
         <table><tr><td>
             <input [(ngModel)]="prueba.motivo.control" type="checkbox"> Control preventivo &nbsp;
             <input [(ngModel)]="prueba.motivo.signos" type="checkbox">Signos de consumo &nbsp;
             <input [(ngModel)]="prueba.motivo.infraccion" type="checkbox">Infracción administrativa &nbsp;
             <input [(ngModel)]="prueba.motivo.accidente" type="checkbox">Accidente de tráfico &nbsp;
         <td></tr></table><br/>
+        <p *ngIf="prueba.requirente_externo">
+            La prueba es requerida por los funcionarios con número de identificación profesional {{prueba.requirente_nip_1}} y 
+            {{prueba.requirente_nip_2}} de {{prueba.requirente_cuerpo}}. Encontrándose la persona sometida a las pruebas
+            {{probante_detenido?'DETENIDO ':'NO detenido'}}{{probante_detenido?'con motivo de '+probante_detenido_motivo:''}}.
+            <br/><br/><br/><br/><br/>
+            Firma de los funcionarios requirentes: <span d-resalte>{{prueba.requirente_nip_1}} y {{prueba.requirente_nip_2}}</span>
+        </p>
+        <p>
+            Se informa al interesado de que si el test o prueba indiciaria resultara positivo, o si presentara signos de consumo 
+            de drogas, quedará obligado a facilitar una segunda muestra de saliva en cantidad suficiente para ser analizada en laboratorio homologado.
+        </p>
+        <p>
+            Se informa, igualmente, al interesado de que la NEGATIVA a someterse a cualquiera de las pruebas mencionadas en los párrafos anteriores,
+            podría ser constitutiva de DELITO contra la seguridad vial, tipificado en el artículo 383 del Código Penal, pudiendo ser castigado con penas
+            de prisión de seis meses a un año y privación del derecho a conducir vehículos a motor y ciclomotores por tiempo superior a uno y hasta cuatro años.
+        </p>
+        <p>
+            Asimismo, se informa al interesado de que si la prueba indiciaria resultara positiva, podrá contrastar los resultados obtenidos mediante
+            análisis de sangre, autorizando para ello tanto su traslado a un centro sanitario, como la posterior extracción de sangre por personal sanitario.
+            Cuando esta prueba de contraste arroje un resultado positivo será abonada por el interesado.
+        </p>
+        <p>
+            Si el resultado del análisis de la segunda muestra de saliva por el laboratorio homologado fuera positivo, la Administración competente podrá
+            iniciar el correspondiente expediente sancionador administrativo. Asimismo, si procede conforme a los supuestos del artículo 379 del Código
+            Penal, que establece como delito la conducción de vehículos a motor y ciclomotores bajo la influencia de drogas tóxicas, estupefacientes y
+            sustancias psicotrópicas, se pondrá en conocimiento de la autoridad judicial correspondiente a los efectos oportunos.
+        </p>
+        <p>
+            Tras ser informado de la normativa y derechos aplicables a las pruebas de detección de drogas, el implicado manifiesta:
+            <b>
+                <span *ngIf="prueba.conforme_pactica">Su conformidad a realizar las pruebas.</span>
+                <span *ngIf="prueba.conforme_pactica">Su negativa a realizar las pruebas.</span>
+            </b>
+        </p>
+        <p>
+            El presente acta quedará integrado, en su caso, anexo al boletín de denuncia y al Atestado. <b>CONSTE Y CERTIFICO</b>.
+            <br/><br/><br/><br/><br/>
+            Fdo: Funcionario/s:<span d-resalte>{{prueba.expediente.instructor}}</span> <span d-resalte>{{prueba.expediente.secretario}}</span> Interesado<br/>  
+        </p>
+        
     
-
-
-    (RELLENAR EL SIGUIENTE CUADRO SOLO SI LA PRUEBA ES REQUERIDA POR OTRA DOTACIÓN POLICIAL).
-
-        <!--
-        <table><tr>
-            <ngl-form-checkbox label="Control preventivo" style="display: inline-block;"><input nglFormControl type="checkbox" [(ngModel)]="prb_mtv_cp" /></ngl-form-checkbox>
-            <ngl-form-checkbox label="Signos externos de consumo" style="display: inline-block;"><input nglFormControl type="checkbox" [(ngModel)]="prb_mtv_se" /></ngl-form-checkbox>
-            <ngl-form-checkbox  label="Infracción de tráfico" style="display: inline-block;"><input nglFormControl type="checkbox" [(ngModel)]="prb_mtv_it" /></ngl-form-checkbox>
-            <ngl-form-checkbox  label="Accidente de tráfico" style="display: inline-block;"><input nglFormControl type="checkbox" [(ngModel)]="prb_mtv_at" /></ngl-form-checkbox>
-        </tr></table><br/>
-        <p>La presente prueba es requerida por los funcionario/s con número de identificación profesional <span d-resalte>{{prb_fun_nip}}</span> de <span d-resalte>{{prb_fun_crp}}</span>. Encontrándose la prueba.probante sometida a las pruebas <span d-resalte>{{prb_520?'DETENIDA POR':'NO detenida.'}} <span *ngIf="prb_520t == 'Si'">{{prb_520_xq? prb_520_xq : '____________________'}}</span></span></p>
-        <div class="caja_firmas"><table class="tabla_firmas"><tr><td>Fdo: Funcionario/s Requirente/s:</td><td> <span d-resalte>{{prb_fun_nip}}</span></td></tr></table></div><br/>  
-        <p>Se informa {{(prs_sxh?'al':'a la')}} interesad{{(prs_sxh?'o':'a')}} de que si el test o prueba indiciaria resultara positivo, o si presentara signos de consumo de drogas, quedará <b>obligado a facilitar una segunda muestra de saliva en cantidad suficiente</b> para ser analizada en laboratorio homologado.</p>
-        <p>Se informa, igualmente, de que la <b>NEGATIVA</b> a someterse a cualquiera de las pruebas mencionadas en los párrafos anteriores, podría ser constitutiva de <b>DELITO</b> contra la seguridad vial, tipificado en el artículo 383 del Código Penal, pudiendo ser castigado con penas de prisión de seis meses a un año y privación del derecho a conducir vehículos a motor y ciclomotores por tiempo superior a uno y hasta cuatro años.</p>
-        <p>Asimismo, se informa {{(prs_sxh?'al':'a la')}} interesad{{(prs_sxh?'o':'a')}} de que si la prueba indiciaria resultara positiva, podrá contrastar los resultados obtenidos mediante análisis de sangre, autorizando para ello tanto su traslado a un centro sanitario, como la posterior extracción de sangre por prueba.probantel sanitario. Cuando esta prueba de contraste arroje un resultado positivo será abonada por el interesado.</p>
-        <p>Si el resultado del análisis de la segunda muestra de saliva por el laboratorio homologado fuera positivo, la Administración competente podrá iniciar el correspondiente expediente sancionador administrativo. Si procediese conforme a los supuestos del artículo 379 del Código Penal, que establece como delito la conducción de vehículos a motor y ciclomotores bajo la influencia de drogas tóxicas, estupefacientes y sustancias psicotrópicas, se pondrá en conocimiento de la autoridad judicial correspondiente a los efectos oportunos.</p>
-        <p>Tras ser informad{{(prs_sxh?'o':'a')}} de la normativa y derechos aplicables a las pruebas de detección de drogas, {{(prs_sxh?'el':'la')}} implicad{{(prs_sxh?'o':'a')}} manifiesta:</p>
-        <p><ngl-form-checkbox label="Su conformidad a realizar las pruebas" style="display: inline-block;"><input nglFormControl type="checkbox" [(ngModel)]="prb_som_si" /></ngl-form-checkbox><ngl-form-checkbox label="Su negativa a realizar las pruebas" style="display: inline-block;"><input nglFormControl type="checkbox" [(ngModel)]="prb_som_no" /></ngl-form-checkbox></p>
-        <p>El presente acta quedará adjunto al boletín de denuncia y/o al Atestado. <b>CONSTE Y CERTIFICO</b>.</p>
-        <div class="caja_firmas"><table class="tabla_firmas"><tr><td>Fdo: Funcionario/s:</td><td><span d-resalte>{{exp_instructor}}</span></td><td><span d-resalte>{{exp_secretario}}</span></td><td>Interesado</td></tr></table></div><br/>  
+    
     </div>
 
-    <div class="print-footer">
-        {{textoPie}}
-    </div>
+    <div id="pie_pagina"></div>
+
     </div> <!--folio-->
 
       </div><!--content-box-->

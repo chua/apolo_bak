@@ -2,23 +2,26 @@
 import { AfterViewInit, Component, Inject, Renderer } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'top-menu',
   templateUrl: './top-menu.component.html'
 })
-export class TopMenuComponent implements AfterViewInit  {
+export class TopMenuComponent implements AfterViewInit {
 
   public isShown: boolean = false;
 
   private renderer: Renderer;
   private document: any;
   private router: Router;
+  private location: Location;
 
-  public constructor(renderer: Renderer, @Inject(DOCUMENT) document: any, router: Router) {
+  public constructor(renderer: Renderer, @Inject(DOCUMENT) document: any, router: Router, location: Location) {
     this.router = router;
     this.renderer = renderer;
     this.document = document;
+    this.location = location;
   }
 
   public ngAfterViewInit(): any {
@@ -41,6 +44,29 @@ export class TopMenuComponent implements AfterViewInit  {
         this.renderer.setElementProperty(this.document.body, 'scrollTop', 0);
       }
     }
+  }
+
+  imprimir() {
+    /* TODO: que se pueda elegir entre imprimir en esta ventana o pestañas...*/
+      window.print();
+      
+    //Implemento pestañas
+
+/*
+    let w = window.open();
+    w.document.write('<html><head><title>');
+    w.document.write('Imprimir');
+    w.document.write('</title><link rel="stylesheet" type="text/css" href="./assets/css/print-main.css"></head><body>');
+    w.document.write(this.document.getElementById('print-box').innerHTML);
+    w.document.write('</body></html>');
+    w.print();
+    w.close();
+*/
+
+  }
+
+  atras() {
+    this.location.back();
   }
 
 }

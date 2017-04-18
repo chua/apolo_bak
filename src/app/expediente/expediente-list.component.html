@@ -20,7 +20,7 @@
       </thead>
 
       <tbody>
-        <tr *ngFor="let expediente of expedientes" (click)="select(expediente)">
+        <tr *ngFor="let expediente of expedientes" (click)="select(expediente)" class="puntero-mano">
           <td>{{expediente.numero}}</td>
           <td>{{expediente.proceso}}</td>
           <td>{{expediente.lugar}}</td>

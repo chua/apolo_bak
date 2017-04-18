@@ -11,7 +11,7 @@ export class CampoResaltadoDirective {
 
     constructor(elem: ElementRef,
                 render: Renderer) {
-       render.setElementStyle (elem.nativeElement, 'border','1px solid orange');        
+       render.setElementStyle (elem.nativeElement, 'border-bottom','1px solid black');        
     }
 
 
