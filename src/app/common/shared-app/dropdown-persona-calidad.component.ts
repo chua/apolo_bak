@@ -1,8 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 
-import { PersonaService } from '../../data-model/persona.service';
-import { Persona }        from '../../data-model/persona.model';
-
 @Component({
   selector: 'app-dropdown-persona-calidad',
   template: `

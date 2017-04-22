@@ -77,8 +77,7 @@ export class PruebaDrogas {
     probante_calidad: number = 0; //0 conductor 1 ocupante 2 peatón
 
     //Que cuerpo y agentes requieren.
-    requirente_externo: boolean = true;
-    requirente_cuerpo: string;
+    requirente_cuerpo: number; //0.- PL: Instructor y Secre, 1.- Pl, 2.- Pn, 3.- GC 4.- Amu
     requirente_nip_1: string;
     requirente_nip_2: string;
 

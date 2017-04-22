@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DropdownExpedienteComponent } from './dropdown-expediente.component';
 import { DropdownPersonaComponent } from './dropdown-persona.component';
 import { DropdownPersonaCalidadComponent } from './dropdown-persona-calidad.component';
+import { DropdownCuerpoRequirenteComponent } from './dropdown-cuerpo-requirente.component';
 import { DropdownVehiculoComponent } from './dropdown-vehiculo.component';
 import { PersonaHelperComponent } from './persona-helper.component';
 import { EncabezadoHelperComponent } from './encabezado-helper.component';
@@ -20,6 +21,7 @@ import { CampoResaltadoDirective }  from './campo-resaltado.directive';
         DropdownPersonaComponent,
         DropdownPersonaCalidadComponent,
         DropdownVehiculoComponent,
+        DropdownCuerpoRequirenteComponent,
         EncabezadoHelperComponent,
         PersonaHelperComponent,
         CampoResaltadoDirective,
@@ -29,6 +31,7 @@ import { CampoResaltadoDirective }  from './campo-resaltado.directive';
         DropdownPersonaComponent,
         DropdownPersonaCalidadComponent,
         DropdownVehiculoComponent,
+        DropdownCuerpoRequirenteComponent,
         EncabezadoHelperComponent,
         PersonaHelperComponent,
         CampoResaltadoDirective,

@@ -79,21 +79,12 @@
         </div>
     </div>   
 
-
-
-  <div>
-    requirente_externo: boolean = true;
-    requirente_cuerpo: string;
-    requierente yo mismo?¿
-    </div>
-
     <div class="form-group" >
         <label for="frm_prueba_lugar">El requirente de la prueba es:</label>
-        <app-dropdown-persona-calidad (selected)="prueba.probante_calidad=$event"></app-dropdown-persona-calidad>
+        <app-dropdown-cuerpo-requirente (selected)="prueba.requirente_cuerpo=$event"></app-dropdown-cuerpo-requirente>
     </div> 
-
-
-    <div class="form-group">
+    
+    <div class="form-group" *ngIf="prueba.requirente_cuerpo>0">
         <label for="frm_req_1">N.I.P Requirente 1</label>
         <input [(ngModel)]="prueba.requirente_nip_1" 
                 class="form-control"
@@ -102,7 +93,7 @@
                 <span  class="help-block">Haz constar el número de identificación profesional del requirente</span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" *ngIf="prueba.requirente_cuerpo>0">
         <label for="frm_req_2">N.I.P. Requirente 2</label>
         <input [(ngModel)]="prueba.requirente_nip_2" 
                 class="form-control"
@@ -213,7 +204,7 @@
             <input [(ngModel)]="prueba.motivo.infraccion" type="checkbox">Infracción administrativa &nbsp;
             <input [(ngModel)]="prueba.motivo.accidente" type="checkbox">Accidente de tráfico &nbsp;
         <td></tr></table><br/>
-        <p *ngIf="prueba.requirente_externo">
+        <p *ngIf="prueba.requirente_cuerpo>0">
             La prueba es requerida por los funcionarios con número de identificación profesional {{prueba.requirente_nip_1}} y 
             {{prueba.requirente_nip_2}} de {{prueba.requirente_cuerpo}}. Encontrándose la persona sometida a las pruebas
             {{probante_detenido?'DETENIDO ':'NO detenido'}}{{probante_detenido?'con motivo de '+probante_detenido_motivo:''}}.
