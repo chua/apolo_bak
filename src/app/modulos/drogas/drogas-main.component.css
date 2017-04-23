@@ -1,0 +1,35 @@
+.border-100 {
+    border: 1px solid black;
+    width: 100%;
+}
+
+.ancho-100 {
+    width: 100%;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.sombreado {
+    background-color: silver;
+}
+
+.indiciario-label {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: gray;
+    text-align: center;
+    color: white;
+
+}
+
+/*
+
+align-content: left; vertical-align: top
+
+*/

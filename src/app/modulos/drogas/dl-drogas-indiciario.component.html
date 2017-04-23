@@ -1,33 +1,162 @@
-<div class="print-header">
-    <span>Expediente: {{exp_numero ? exp_numero : ' ______________'}}</span>
-    <img class="logo" src="../../assets/imgs/logo_ayto.png"/>
+<div class="content-header">
+    <h1>Prueba de drogas: Test Indiciario</h1>
 </div>
 
- <div class="print-body">
-    <p class="titulo">ACTA DE OBTENCION DE MUESTRAS SALIVALES E INVESTIGACION DE LA PRESENCIA CUALITATIVA DE DROGAS EN EL ORGANISMO MEDIANTE TEST INDICIARIO.</p>
-    <p>En <span [ngClass]="resalteClass">{{prb_lugar}}</span> de <span [ngClass]="resalteClass">{{cfg_Ciudad}}</span>, a las <span [ngClass]="resalteClass">{{prb_hora}}</span> horas del <span [ngClass]="resalteClass">{{prb_fecha|date:'dd/MM/yyyy'}}</span>, el funcionario con NIP <span [ngClass]="resalteClass">{{exp_instructor}}</span>, en funciones de policía judicial de tráfico habilitado al efecto de acuerdo con el art. 796.1.7o de la Lecrim, <b>CERTIFICA</b> la práctica de la prueba de detección de drogas en fluido oral a la persona cuyos datos de filiación aparecen a continuación, la cual ha sido informada previamente de sus derechos, así como de sus obligaciones y de las consecuencias de la negativa a realizar la misma.</p>
+
+<div class="content-box">
+    <div class="section">
+
+        <div class="form-group">
+            <label for="frm_prueba_lugar">Selecciona el expediente</label>
+            <app-dropdown-expediente (selected)="prueba.expediente=$event"></app-dropdown-expediente>
+        </div>
+
+        <div class="form-group">
+            <label for="frm_prueba_lugar">Selecciona Interesado/a</label>
+            <app-dropdown-persona (selected)="prueba.probante=$event"></app-dropdown-persona>
+        </div>
+
+        <div class="form-group">
+            <label for="frm_prueba_lugar">El implicado es:</label>
+            <app-dropdown-persona-calidad (selected)="prueba.probante_calidad=$event"></app-dropdown-persona-calidad>
+            <span class="help-block">En el caso los peatones, no será necesario introducir vehículo</span>
+        </div>
+
+    </div>
+</div>
 
 
+
+
+
+<div id="print-box" class="content-box">
+    <div class="section">
+        <!-- ------------------------------------------Oficio------------ -->
+
+        <div class="folio">
+
+            <encabezado-helper [expediente]="prueba.expediente.numero"></encabezado-helper>
+
+            <div class="cuerpo">
+
+                <table class="ancho-100" style="text-align: center">
+                    <tr>
+                        <td style="width:35%;" class="border indiciario-label">
+                            TEST<BR/>INDICIARIO
+                        </td>
+                        <td style="width:20%;"></td>
+                        <td style="width:45%;"class="border">
+                                Número de boletín: _______
+                        </td>
+                    </tr>
+                </table><br/>
+
+                <p class="titulo">
+                    ACTA DE OBTENCION DE MUESTRAS SALIVALES E INVESTIGACION DE LA PRESENCIA CUALITATIVA DE DROGAS EN EL ORGANISMO MEDIANTE TEST INDICIARIO
+                </p>
+
+                <p>
+                    En
+                    <span d-resalte>{{prueba.expediente.lugar}}</span> de
+                    <span d-resalte>{{prueba.expediente.ciudad}}</span>, a las
+                    <span d-resalte>{{prueba.derechos_hora}}</span> horas del
+                    <span d-resalte>{{prueba.derechos_fecha}}</span>, el funcionario con NIP 
+                    <span d-resalte>{{prueba.expediente.instructor}}</span>,
+                    en funciones de policía judicial de tráfico, habilitado al efecto de acuerdo con el art. 796.1.7o de la Lecrim, 
+                    <b>CERTIFICA</b> la práctica de la prueba de detección de drogas en fluido oral a la persona cuyos datos de 
+                    filiación aparecen a continuación, la cual ha sido informada previamente de sus derechos, así como de sus 
+                    obligaciones y de las consecuencias de la negativa a realizar la misma.
+                </p>
+                <p>
+                    Filiación
+                </p>
+                <p>
+                    Para la obtención de la muestra se utiliza el siguiente dispositivo analizador cualitativo, 
+                    obteniendo el resultado que se indica:
+                </p>
+                <table class="border-100">
+                    <tr>
+                        <th colspan="2" width="60%" class="centrado border">Datos del analizador indiciario de drogas</th>
+                        <th rowspan="2" width="20%" class="centrado">Sustancia</th>
+                        <th rowspan="2" width="20%" class="centrado">Resultado del Test</th>
+                    </tr>
+                    <tr class="border-100">
+                        <td class="centrado">Dispositivo utilizado</td>
+                        <td class="centrado">Fecha de Caducidad</td>
+
+                    </tr>
+                    <tr class="border-100">
+                        <td rowspan="6"class="centrado">DrugWipe ___</td>
+                        <td rowspan="6"class="centrado">__/__/____</td>
+                        <td>CANN (THC)</td>
+                        <td> Res1</td>
+                    </tr>
+                    <tr class="border-100">
+                        <td>COCAÍNA</td>
+                        <td> Negativo</td>
+                    </tr>
+                    <tr class="border-100">
+                        <td>OPIÁCEOS</td>
+                        <td><b>Positivo</b></td>
+                    </tr>
+                    <tr class="border-100">
+                        <td>AM/MET</td>
+                        <td> Res4</td>
+                    </tr>
+                    <tr class="border-100">
+                        <td>KET</td>
+                        <td> Res2</td>
+                    </tr>
+                    <tr class="border-100">
+                        <td>BZO</td>
+                        <td> Res2</td>
+                    </tr>
+                        
+                </table>
+                <br/>
+
+
+
+               
 
 
 
 
 
     <p>
-        Si el resultado del análisis de la segunda muestra de saliva por el laboratorio homologado fuera positivo, la Administración competente podrá
-        iniciar el correspondiente expediente sancionador administrativo. Asimismo, si procede conforme a los supuestos del artículo 379 del Código
-        Penal, que establece como delito la conducción de vehículos a motor y ciclomotores bajo la influencia de drogas tóxicas, estupefacientes y
-        sustancias psicotrópicas, se pondrá en conocimiento de la autoridad judicial correspondiente a los efectos oportunos.
-        Tras ser informado de la normativa y derechos aplicables a las pruebas de detección de drogas, el implicado manifiesta:
-        Su conformidad a realizar las pruebas. Su negativa a realizar las pruebas.
+        En este acto, y en virtud de lo previsto en el artículo 104.d del Real Decreto Legislativo 6/2015, de 30 de octubre,
+        por el que se aprueba el texto refundido de la Ley sobre tráfico, circulación de vehículos a motor y seguridad vial,
+        se adopta con el vehículo conducido por el interesado, la siguiente medida:
     </p>
     <p>
-        El presente acta quedará integrado, en su caso, anexo al boletín de denuncia y al Atestado. CONSTE Y CERTIFICO.
-        NIP: NIP: DNI/NIE/PAS.
-        Firma agente instructor: Firma agente testigo: Firma del interesado:
+        Su inmovilización. |||| La autorización al conductor designado por el titular para hacerse cargo del mismo
     </p>
-</div>
+     <p>
+        El presente acta quedará integrado, en su caso, anexo al boletín de denuncia y al Atestado. <b>CONSTE Y CERTIFICO</b>.
+        <br/><br/><br/><br/><br/> 
+        Fdo: Funcionario{{prueba.expediente.secretario?'s':''}}
+        {{prueba.expediente.instructor}}{{prueba.expediente.secretario?',':''}}
+        {{prueba.expediente.secretario}}
+        e interesado<br/>
+    </p>
 
-<div class="print-footer">
-    {{textoPie}}
+    <p>
+        <b>DILIGENCIA.-</b> para hacer constar que, previas las responsabilidades en que puede incurrir en el supuesto de facilitar
+la conducción del vehículo a la persona sometida a prueba que constata este documento, se hace cargo del
+vehículo, previa autorización de su titular D./Dña. ____________________________________________, con
+DNI/NIE/PAS__________________.<br/>
+Firma de la persona autorizada.
+    </p>
+
+
+     </div>
+
+            <div id="pie_pagina"></div>
+
+        </div>
+        <!--folio-->
+
+    </div>
+    <!--content-box-->
 </div>
+<!-- section-->
